@@ -5,11 +5,79 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Crystal Collector</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="reset.css" />
+    <!-- instructions call for reset sheet. Not needed due to use of bootstrap -->
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="reset.css" /> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
     <script src="game.js"></script>
 </head>
 <body>
+    <div class="container">
+        <div class="jumbotron text-center">
+            <h1 class="display-4">Crystal Collector</h1>
+            <hr class="my-4">
+            <p>You will be given a random number at the start of the game.</p>
+            <p>There are four crystal below. By click on a crystal you will add a specific amount of points to your total score.</p>
+            <p>You win the game by matching your total score to the random number. Yo uwill lose the game if you total score goes above the randome number.</p>
+            <P>The value of each crystal is hidden from you until you click on it.</P>
+            <p>Remember, Each time the game starts the values of each crystal will change.</p>
+            <h2>Good Luck!</h2>
+        </div>
+        <!-- Score Card Row -->
+        <div class="row border-bottom mb-3">
+            <div id="target-number" class="col-md-8 bg-light">
+                999
+            </div>
+
+            <div id="score-grid" class="col-md-4 bg-light">
+                <div class="row">
+                    <div>
+                        Wins: 
+                            <span id="wins">
+                                12
+                            </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        Losses: 
+                            <span id="losses">
+                                0
+                            </span>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+
+        <!-- Crytal Row -->
+        <div class="row mt-4">
+            <div class="col-md-3 border-0" id="gem-1">
+                <img src="Assets/images/gem1.png" height="200px" width="200px" class="btn btn-outline-secondary">
+            </div>
+            <div class="col-md-3" id="gem-2">
+                    <img src="Assets/images/gem2.png" height="200px" width="200px" class="btn btn-outline-secondary">                
+            </div>
+            <div class="col-md-3" id="gem-3">
+                    <img src="Assets/images/gem3.png" height="200px" width="200px" class="btn btn-outline-secondary">
+            </div>
+            <div class="col-md-3" id="gem-4">
+                    <img src="Assets/images/gem4.png" height="200px" width="200px" class="btn btn-outline-secondary">
+            </div>
+        </div>
+    <!-- Current Score Label Row -->
+        <div class="row mt-4">
+            <div>Your Total Score is:</div>
+        </div>
+    <!-- Current Score Label Row -->
+        <div class="row">
+            <div class="col-md-6 bg-light">
+                <span id="current-score">57</span>
+            </div>
+        </div>
+
+
+    </div>
     
 </body>
 </html>
