@@ -112,14 +112,39 @@ function gameLogic() {
 // if current score is equal to target  show win 
 // if current score is greater than end the game
     if(crystal.currentval === crystal.targetval) {
-        alert("you are a winner")
         wins++;
         resetGame();
+        showWinModal();
         
     } else if (crystal.currentval > crystal.targetval) {
-        alert("You Suck")
         losses++;
         resetGame();
+        showLoseModal();
     }; 
 
 }
+
+// Show / Hide Instructions
+
+$(document).ready(function () {
+    $(function () {
+        $("#defaultCheck1").change(function () {
+            if ($(this).is(":checked")) {
+                $("#instructions").hide();
+                $("#instruction-label").html("Show Instructions")
+            } else {
+                $("#instructions").show();
+                $("#instruction-label").html("Hide Instructions")
+            }
+        });
+    });
+});
+
+function showWinModal() {   
+    $("#myWinModal").modal();
+  };
+
+  function showLoseModal() {   
+    $("#myLoseModal").modal();
+  };
+
