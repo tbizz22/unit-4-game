@@ -18,15 +18,17 @@
         <div class="jumbotron text-center">
             <h1 class="display-4">Crystal Collector</h1>
             <hr class="my-4">
-            <p>You will be given a random number at the start of the game.</p>
-            <p>There are four crystal below. By click on a crystal you will add a specific amount of points to your total score.</p>
-            <p>You win the game by matching your total score to the random number. Yo uwill lose the game if you total score goes above the randome number.</p>
-            <P>The value of each crystal is hidden from you until you click on it.</P>
-            <p>Remember, Each time the game starts the values of each crystal will change.</p>
-            <h2>Good Luck!</h2>
+            <div id="instructions">
+                <p>You will be given a random number at the start of the game.</p>
+                <p>There are four crystal below. By click on a crystal you will add a specific amount of points to your total score.</p>
+                <p>You win the game by matching your total score to the random number. You will lose the game if you total score goes above the random number.</p>
+                <P>The value of each crystal is hidden from you until you click on it.</P>
+                <p>Remember, Each time the game starts the values of each crystal will change.</p>
+                <h2>Good Luck!</h2>
+            </div>
         </div>
         <!-- Score Card Row -->
-        <div class="row border-bottom mb-3">
+        <div class="row border mb-3">
             <div id="target-val" class="col-md-8 bg-light"></div>
 
             <div id="score-grid" class="col-md-4 bg-light">
@@ -51,7 +53,7 @@
         </div>
 
         <!-- Crytal Row -->
-        <div class="row mt-4">
+        <div class="row mt-4" id="gem-row">
             <div class="col-md-3 border-0" id="gem-1">
                 <img src="Assets/images/gem1.png" height="200px" width="200px" class="btn btn-outline-secondary">
             </div>

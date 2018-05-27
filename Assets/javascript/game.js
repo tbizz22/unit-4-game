@@ -13,7 +13,8 @@ var crystal = {
         crystal2: 0,
         crystal3: 0,
         crystal4: 0 
-    }
+    },
+    buttonclicked: "",
 };
 
 // Get the game set up
@@ -67,7 +68,58 @@ function getGemVal () {
         $("#current-score").html(crystal.currentval);
     }
 
-
+//reset game
+    function resetGame () {
+        getTargetVal();
+        getGemVal();
+        setGameScore();
+        crystal.currentval = 0;
+        setCurrentScore();
+    }
 
 // Button Listeners
 
+// Button 1
+$("#gem-row").on("click","#gem-1",function() {
+   // alert("you clicked gem 1 and my value is " + crystal.gems.crystal1)
+    crystal.buttonclicked = crystal.gems.crystal1
+    gameLogic();
+});
+// Button 2
+$("#gem-row").on("click","#gem-2",function() {
+   // alert("you clicked gem 2 and my value is " + crystal.gems.crystal2)
+    crystal.buttonclicked = crystal.gems.crystal2
+    gameLogic();
+});
+// Button 3
+$("#gem-row").on("click","#gem-3",function() {
+   // alert("you clicked gem 3 and my value is " + crystal.gems.crystal3)
+    crystal.buttonclicked = crystal.gems.crystal3
+    gameLogic();
+});
+// Button 4
+$("#gem-row").on("click","#gem-4",function() {
+  // alert("you clicked gem 4 and my value is " + crystal.gems.crystal4)
+    crystal.buttonclicked = crystal.gems.crystal4
+    gameLogic();
+});
+
+
+function gameLogic() {
+    crystal.currentval = crystal.currentval + crystal.buttonclicked;
+    setCurrentScore();
+
+// if current score is equal to target  show win 
+// if current score is greater than end the game
+    if(crystal.currentval === crystal.targetval) {
+        alert("you are a winner")
+        wins++;
+        resetGame();
+        
+    } else if (crystal.currentval > crystal.targetval) {
+        alert("You Suck")
+        losses++;
+        resetGame();
+    }; 
+
+}
