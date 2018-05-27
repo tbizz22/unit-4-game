@@ -5,6 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>Crystal Collector</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="Assets/images/favicon.ico" type="image/gif" sizes="16x16">
 <!-- instructions call for reset sheet. Not needed due to use of bootstrap -->
 <!-- <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" /> -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -24,10 +25,10 @@
             <hr class="my-4">
             <div id="instructions">
                 <p>You will be given a random number at the start of the game.</p>
-                <p>There are four crystal below. By click on a crystal you will add a specific amount of points to your total score.</p>
-                <p>You win the game by matching your total score to the random number. You will lose the game if you total score goes above the random number.</p>
-                <P>The value of each crystal is hidden from you until you click on it.</P>
-                <p>Remember, Each time the game starts the values of each crystal will change.</p>
+                <p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</p>
+                <p>You will win the game by matching your total score to the target score. You will lose the game if you total score goes above the random number. So be careful!</p>
+                <P>The value of each crystal will remain hidden. Find out each crystals value by clicking on it.</P>
+                <p>Remember, Each time a new round starts the values for each crystal will change.</p>
                 <h2>Good Luck!</h2>
             </div>
         <!-- hide instruction button -->
@@ -40,22 +41,25 @@
                   
         </div>
         <!-- Score Card Row -->
+        <div class="row font-weight-bold">
+            Target Score:
+        </div>
         <div class="row border mb-3">
-            <div id="target-val" class="col-md-8 bg-light"></div>
+            <div id="target-val" class="col-md-8 bg-light display-4"></div>
 
             <div id="score-grid" class="col-md-4 bg-light">
                 <div class="row">
-                    <div>
+                    <div class="font-weight-bold">
                         Wins: 
-                            <span id="wins">
+                            <span class="font-weight-normal" id="wins">
                                 0                         
                             </span>
                     </div>
                 </div>
                 <div class="row">
-                    <div>
+                    <div class="font-weight-bold">
                         Losses: 
-                            <span id="losses">
+                            <span class="font-weight-normal" id="losses">
                                 0
                             </span>
                     </div>
@@ -81,11 +85,11 @@
         </div>
     <!-- Current Score Label Row -->
         <div class="row mt-4">
-            <div>Your Total Score is:</div>
+            <div class="font-weight-bold">Your Total Score is:</div>
         </div>
     <!-- Current Score Label Row -->
         <div class="row">
-            <div class="col-md-6 bg-light">
+            <div class="col-md-3 bg-light display-4 border">
                 <span id="current-score">57</span>
             </div>
         </div>
@@ -111,6 +115,7 @@
                     </div>
                 </div>
             </div>
+        </div>
         <!-- Losing Modal -->
         <div class="modal fade" id="myLoseModal" tabindex="-1" role="dialog" aria-labelledby="myLoseModal" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -129,6 +134,7 @@
                     </div>
                 </div>
             </div>
+        </div>
     <!--this closes the container div  -->
     </div>
 
