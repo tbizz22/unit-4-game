@@ -36,24 +36,24 @@ function getTargetVal () {
     $("#target-val").html(crystal.targetval);
 }
 
-// // Generate gem Values
-//     function getGemVal() {
-//         for (var i = 0; i < Object.keys(crystal.gems).length; i++) {
-//         crystal.gems.crystal[i+1] = getRandomizer(1,19); 
-//         console.log(crystal.gems)
-//         }
-//     }
+// Generate gem Values
+    function getGemVal() {
+        Object.keys(crystal.gems).forEach ((key) => {
+            crystal.gems[key] = getRandomizer(1,19);             
+        });
+        console.log(crystal.gems)
+    }
 
-function getGemVal () {
-    crystal.gems.crystal1 = getRandomizer(1,19);
-    crystal.gems.crystal2 = getRandomizer(1,19);
-    crystal.gems.crystal3 = getRandomizer(1,19);
-    crystal.gems.crystal4 = getRandomizer(1,19);
-    console.log("Crystal 1 Value: " + crystal.gems.crystal1);
-    console.log("Crystal 2 Value: " + crystal.gems.crystal2);
-    console.log("Crystal 3 Value: " + crystal.gems.crystal3);
-    console.log("Crystal 4 Value: " + crystal.gems.crystal4);
-}
+// function getGemVal () {
+//     crystal.gems.crystal1 = getRandomizer(1,19);
+//     crystal.gems.crystal2 = getRandomizer(1,19);
+//     crystal.gems.crystal3 = getRandomizer(1,19);
+//     crystal.gems.crystal4 = getRandomizer(1,19);
+//     console.log("Crystal 1 Value: " + crystal.gems.crystal1);
+//     console.log("Crystal 2 Value: " + crystal.gems.crystal2);
+//     console.log("Crystal 3 Value: " + crystal.gems.crystal3);
+//     console.log("Crystal 4 Value: " + crystal.gems.crystal4);
+// }
     
 
 // UI UPDATERS
